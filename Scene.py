@@ -41,9 +41,9 @@ class Scene():
         fonte = np.array([0.7, 0.7, 0.7])
         ambient = np.array([0.3, 0.3, 0.3])
 
-        diffuse = fd*np.cross(fonte, np.float64(object.kd))
-        e = fe*np.cross(fonte, np.float64(object.ke))
-        ambient = np.cross(ambient, np.float64(object.ka))
+        diffuse = fd*vec_product(fonte, object.kd)
+        e = fe*vec_product(fonte, object.ke)
+        ambient = vec_product(ambient, object.ka)
 
         if(isShadowed):
             return ambient
