@@ -3,7 +3,7 @@ import numpy as np
 from utils import *
 
 class Sphere():
-    def __init__(self, center, radius, color, kd, ka, ke, s):
+    def __init__(self, center, radius, color, ka, kd, ke, s):
         self.center=center
         self.radius=radius
         self.colour=color

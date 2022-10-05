@@ -5,7 +5,7 @@ import numpy as np
 
 
 class Plane():
-    def __init__(self, center, normal, colour, ka, ke, kd, s):
+    def __init__(self, center, normal, colour, ka, kd, ke, s):
         self.center=center
         self.normal = normal
         self.colour=colour
