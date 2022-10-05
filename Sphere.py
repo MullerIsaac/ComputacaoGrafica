@@ -3,14 +3,14 @@ import numpy as np
 from utils import *
 
 class Sphere():
-    def __init__(self, center, radius, color, kd, ka, ke, specular):
+    def __init__(self, center, radius, color, kd, ka, ke, s):
         self.center=center
         self.radius=radius
         self.colour=color
         self.kd = kd
         self.ke = ke
         self.ka = ka
-        self.specular = specular
+        self.shininess = s
     
     '''ray_direction é um vetor normalizado com a direção do raio'''
     def intersection(self, origin, ray_direction):

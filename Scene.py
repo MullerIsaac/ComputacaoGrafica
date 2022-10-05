@@ -33,7 +33,7 @@ class Scene():
         return L
 
     def compute_lightning(self, N, L, R, V, object, isShadowed = False):
-        s = object.specular
+        s = object.shininess
 
         fd = max(0, np.dot(L, N))
         fe = pow(max(0, np.dot(R, V)), s)
