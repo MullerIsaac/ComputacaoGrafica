@@ -1,16 +1,13 @@
 from math import *
 import numpy as np
 from utils import *
+from Object import Object
 
-class Sphere():
-    def __init__(self, center, radius, color, ka, kd, ke, s):
+class Sphere(Object):
+    def __init__(self, center, radius, ka, kd, ke, s):
         self.center=center
         self.radius=radius
-        self.colour=color
-        self.kd = kd
-        self.ke = ke
-        self.ka = ka
-        self.shininess = s
+        super().__init__(ka, kd, ke, s)
     
     '''ray_direction é um vetor normalizado com a direção do raio'''
     def intersection(self, origin, ray_direction):
@@ -21,7 +18,7 @@ class Sphere():
 
         delta = b*b - 4*a*c
 
-        if delta > 0:
+        if delta >= 0:
             t1 = (-b+sqrt(delta))/2*a
             t2 = (-b-sqrt(delta))/2*a
 

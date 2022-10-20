@@ -2,6 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 from Canva import Canva
+from Cylinder import Cylinder
 from Viewport import Viewport
 from utils import *
 
@@ -79,7 +80,6 @@ class Scene():
         if(closest_object == None):
             return self.canva.background
             
-        closest_t = closest_t + 0.001
         P = origin + closest_t*direction
         N = closest_object.getNormal(P)
         L = self.calc_light(self.light, P)
