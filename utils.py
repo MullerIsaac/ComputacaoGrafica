@@ -2,7 +2,7 @@ import numpy as np
 
 
 def normalize(x):
-    x /= np.linalg.norm(x)
+    x = x / np.linalg.norm(x)
     return x
 
 def vec_product(x, y):
@@ -28,4 +28,11 @@ def matrix_per_vector(M, v):
         M[2,0]*v[0]+M[2,1]*v[1]+ M[2,2]*v[2]
     ])
     return v
+
+def cross(A, B):
+    x = A[1]*B[2] - A[2]*B[1]
+    y = A[2]*B[0] - A[0]*B[2]
+    z = A[0]*B[1] - A[1]*B[0]
+    
+    return np.array([x, y, z])
 

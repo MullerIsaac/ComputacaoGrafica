@@ -85,10 +85,12 @@ class Scene():
         L = self.calc_light(self.light, P)
         V = normalize(origin - P)
         R = N*(np.dot(L, N)*2)
-        
-        t, _= self.trace_objects(P, L, t_min, t_max)
 
-        if(t > 0  and t < np.linalg.norm(self.light - P)):
+        tam_pf_pi = np.linalg.norm(self.light - P)
+        
+        t, _= self.trace_objects(P, L, t_min, tam_pf_pi)
+
+        if(t > 0  and t < tam_pf_pi):
             intensidade = self.compute_lightning(N, L, R, V, closest_object, True)
         else:
             intensidade = self.compute_lightning(N, L, R, V, closest_object)

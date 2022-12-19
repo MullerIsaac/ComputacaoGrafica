@@ -3,11 +3,11 @@ import numpy as np
 from Object import Object
 
 class Plane(Object):
-    def __init__(self, center, normal,ka, kd, ke, s):
+    def __init__(self, center, normal, ka, kd, ke, s):
         self.center=center
         self.normal = normal
         super().__init__(ka, kd, ke, s)
-    
+
     '''ray_direction é um vetor normalizado com a direção do raio'''
     def intersection(self, origin, ray_direction):
         w = origin - self.center
